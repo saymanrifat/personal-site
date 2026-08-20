@@ -1,0 +1,8 @@
+import '../app.css';
+import '@fontsource-variable/inter';
+import '@fontsource-variable/jetbrains-mono/wght.css';
+import Nav from '$lib/components/Nav.svelte';
+import Footer from '$lib/components/Footer.svelte';
+import { theme } from '$lib/stores/theme';
+
+let { children } = $props();
