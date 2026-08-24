@@ -31,15 +31,15 @@
 
 <Nav />
 
-<main id="main" class="main">
+<main id="main">
 	{@render children()}
 </main>
 
 <Footer />
 
 <style>
-	.main {
-		min-height: calc(100vh - 4rem - 200px);
-		padding-top: var(--sp-12);
+	main {
+		min-height: calc(100vh - 3.25rem - 120px);
+		padding-top: var(--sp-4);
 	}
 </style>

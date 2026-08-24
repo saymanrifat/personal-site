@@ -4,7 +4,7 @@
 
 <footer class="site-footer">
 	<div class="container footer-inner">
-		<p class="mono">© {new Date().getFullYear()} {site.name}</p>
+		<p class="mono" style="margin: 0;">© {new Date().getFullYear()} {site.name}</p>
 		<ul class="socials">
 			{#each site.socials as s (s.label)}
 				<li>
@@ -18,19 +18,16 @@
 <style>
 	.site-footer {
 		border-top: 1px solid var(--border);
-		padding: var(--sp-8) 0;
-		margin-top: var(--sp-16);
+		padding: var(--sp-6) 0;
+		margin-top: var(--sp-12);
 	}
 	.footer-inner {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		gap: var(--sp-4);
-		max-width: 56rem;
+		max-width: 52rem;
 		flex-wrap: wrap;
-	}
-	.site-footer p {
-		margin: 0;
 	}
 	.socials {
 		display: flex;
@@ -40,8 +37,8 @@
 		padding: 0;
 	}
 	.socials a {
-		color: var(--text-secondary);
-		font-size: 0.9rem;
+		color: var(--text-muted);
+		font-size: 0.82rem;
 		text-decoration: none;
 	}
 	.socials a:hover {

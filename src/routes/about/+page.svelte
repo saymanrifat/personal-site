@@ -5,13 +5,13 @@
 
 <Seo title="About" description={`About ${site.name} — background, experience, and principles.`} type="profile" />
 
-<div class="container">
-	<header class="page-head">
-		<p class="mono kicker">/ about</p>
+<div class="cv">
+	<header class="cv-page-head">
+		<p class="cv-kicker mono">/ about</p>
 		<h1>About me</h1>
 	</header>
 
-	<section class="prose">
+	<div class="cv-prose">
 		<p>
 			I'm {site.name}, a developer based in {site.location}. For the past few years I've been
 			building software end to end — from the first line of code to the release notes — with a focus
@@ -27,86 +27,42 @@
 			I work at {site.company}, shipping production apps, and I prototype independently on the
 			side. I write about both here.
 		</p>
-	</section>
+	</div>
 
-	<section id="experience">
-		<h2 class="section-title">Experience</h2>
-		<ul class="exp-list">
-			{#each experience as job (job.role + job.company)}
-				<li class="exp">
-					<div class="exp-head">
+	<!-- Experience -->
+	<section class="cv-section">
+		<h2 class="cv-section-title">Experience</h2>
+		{#each experience as job}
+			<div class="cv-entry">
+				<div class="cv-entry-head">
+					<div>
 						<h3>{job.role}</h3>
-						<span class="mono exp-period">{job.company} · {job.period}</span>
+						<span class="cv-company">{job.company}</span>
 					</div>
-					<p class="exp-summary">{job.summary}</p>
-					<ul class="exp-points">
-						{#each job.points as pt (pt)}
+					<span class="cv-period">{job.period}</span>
+				</div>
+				<p>{job.summary}</p>
+				{#if job.points.length}
+					<ul class="cv-bullets">
+						{#each job.points as pt}
 							<li>{pt}</li>
 						{/each}
 					</ul>
-				</li>
-			{/each}
-		</ul>
+				{/if}
+			</div>
+		{/each}
 	</section>
 
-	<section id="principles">
-		<h2 class="section-title">Principles</h2>
-		<ul class="principles">
-			{#each principles as p (p.title)}
-				<li>
+	<!-- Principles -->
+	<section class="cv-section">
+		<h2 class="cv-section-title">Principles</h2>
+		<div class="cv-principles">
+			{#each principles as p}
+				<div class="cv-principle">
 					<h3>{p.title}</h3>
 					<p>{p.body}</p>
-				</li>
+				</div>
 			{/each}
-		</ul>
+		</div>
 	</section>
 </div>
-
-<style>
-	.page-head { margin-bottom: var(--sp-8); }
-	.prose { max-width: 42em; }
-	.prose p { color: var(--text-secondary); }
-	section { padding: var(--sp-10) 0; border-top: 1px solid var(--border); }
-	.exp-list {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		display: grid;
-		gap: var(--sp-6);
-	}
-	.exp {
-		padding: var(--sp-6);
-		border: 1px solid var(--border);
-		border-radius: var(--radius-lg);
-		background: var(--bg-elevated);
-	}
-	.exp-head {
-		display: flex;
-		align-items: baseline;
-		justify-content: space-between;
-		gap: var(--sp-4);
-		flex-wrap: wrap;
-		margin-bottom: var(--sp-2);
-	}
-	.exp-head h3 { margin: 0; font-size: 1.2rem; }
-	.exp-period { color: var(--text-muted); font-size: 0.85rem; }
-	.exp-summary { color: var(--text-secondary); max-width: 42em; }
-	.exp-points { margin: var(--sp-2) 0 0; padding-left: 1.25rem; color: var(--text-secondary); }
-	.exp-points li { margin-bottom: var(--sp-1); }
-	.principles {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-		gap: var(--sp-4);
-	}
-	.principles li {
-		padding: var(--sp-6);
-		border: 1px solid var(--border);
-		border-radius: var(--radius-lg);
-		background: var(--bg-elevated);
-	}
-	.principles h3 { font-size: 1.05rem; margin-bottom: var(--sp-2); }
-	.principles p { color: var(--text-secondary); margin: 0; }
-</style>

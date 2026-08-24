@@ -44,7 +44,7 @@
 		position: sticky;
 		top: 0;
 		z-index: 40;
-		background: color-mix(in srgb, var(--bg) 82%, transparent);
+		background: color-mix(in srgb, var(--bg) 85%, transparent);
 		backdrop-filter: saturate(140%) blur(8px);
 		-webkit-backdrop-filter: saturate(140%) blur(8px);
 		border-bottom: 1px solid var(--border);
@@ -54,12 +54,13 @@
 		align-items: center;
 		justify-content: space-between;
 		gap: var(--sp-4);
-		height: 4rem;
-		max-width: 56rem;
+		height: 3.25rem;
+		max-width: 52rem;
 	}
 	.logo {
 		font-weight: 600;
 		color: var(--text);
+		font-size: 0.95rem;
 		text-decoration: none;
 	}
 	.logo:hover {
@@ -75,15 +76,16 @@
 	}
 	.nav-list a {
 		display: inline-block;
-		padding: var(--sp-2) var(--sp-3);
+		padding: var(--sp-1) var(--sp-2);
 		border-radius: var(--radius);
 		color: var(--text-secondary);
-		font-size: 0.95rem;
+		font-size: 0.85rem;
 		text-decoration: none;
 	}
 	.nav-list a:hover {
 		color: var(--text);
 		background: var(--bg-subtle);
+		text-decoration: none;
 	}
 	.nav-list a[aria-current='page'] {
 		color: var(--text);
@@ -91,8 +93,8 @@
 	}
 	@media (max-width: 480px) {
 		.nav-list a {
-			padding: var(--sp-2);
-			font-size: 0.9rem;
+			padding: var(--sp-1);
+			font-size: 0.8rem;
 		}
 	}
 </style>
