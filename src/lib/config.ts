@@ -7,8 +7,8 @@ export const site = {
 	title: 'Sayman Rifat — Developer',
 	description:
 		'Sayman Rifat is a developer based in Bangladesh building calm, well-crafted software — web, mobile, and developer tools with AI at the core.',
-	url: 'https://saymanrifat.com.bd',
-	email: 'contact.saymanrifat@gmail.com',
+	url: 'https://saymanrifat.com',
+	email: 'contact@saymanrifat.com',
 	location: 'Bangladesh',
 	timezone: 'Asia/Dhaka',
 	company: 'Umber Lab Limited',
@@ -19,8 +19,8 @@ export const site = {
 		'I turn loose ideas into quietly reliable software. Most of what I build leans on thoughtful UX, solid engineering, and a healthy respect for the people who will use it.',
 	socials: [
 		{ label: 'GitHub', handle: 'saymanrifat', href: 'https://github.com/saymanrifat' },
-		{ label: 'Website', handle: 'saymanrifat.com.bd', href: 'https://saymanrifat.com.bd/' },
-		{ label: 'Email', handle: 'contact.saymanrifat@gmail.com', href: 'mailto:contact.saymanrifat@gmail.com' }
+		{ label: 'Website', handle: 'saymanrifat.com', href: 'https://saymanrifat.com/' },
+		{ label: 'Email', handle: 'contact@saymanrifat.com', href: 'mailto:contact@saymanrifat.com' }
 	]
 } as const;
 
