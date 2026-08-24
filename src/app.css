@@ -170,6 +170,16 @@ pre code {
 	padding: 0 var(--sp-6);
 }
 
+@media (max-width: 640px) {
+	.container {
+		padding-left: var(--sp-4);
+		padding-right: var(--sp-4);
+	}
+	.cv {
+		padding: var(--sp-8) var(--sp-4) var(--sp-16);
+	}
+}
+
 .section-title {
 	font-size: 0.7rem;
 	font-weight: 600;

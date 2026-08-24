@@ -53,9 +53,11 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		gap: var(--sp-4);
-		height: 3.25rem;
+		gap: var(--sp-2);
+		padding-top: var(--sp-1);
+		padding-bottom: var(--sp-1);
 		max-width: 52rem;
+		flex-wrap: wrap;
 	}
 	.logo {
 		font-weight: 600;
@@ -81,6 +83,7 @@
 		color: var(--text-secondary);
 		font-size: 0.85rem;
 		text-decoration: none;
+		white-space: nowrap;
 	}
 	.nav-list a:hover {
 		color: var(--text);
@@ -91,10 +94,30 @@
 		color: var(--text);
 		font-weight: 600;
 	}
-	@media (max-width: 480px) {
+	@media (max-width: 640px) {
+		.site-header {
+			position: sticky;
+		}
+		.nav-inner {
+			gap: var(--sp-2) var(--sp-1);
+		}
+		.nav-list {
+			order: 3;
+			width: 100%;
+			justify-content: flex-start;
+			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;
+			padding-bottom: var(--sp-1);
+		}
 		.nav-list a {
-			padding: var(--sp-1);
+			padding: var(--sp-1) var(--sp-2);
+			font-size: 0.85rem;
+		}
+	}
+	@media (max-width: 400px) {
+		.nav-list a {
 			font-size: 0.8rem;
+			padding: var(--sp-1) var(--sp-2);
 		}
 	}
 </style>
