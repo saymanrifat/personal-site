@@ -6,18 +6,17 @@
 <Seo />
 
 <div class="cv">
-	<!-- Name / title / contact — CV header -->
-	<header class="cv-header">
-		<h1>{site.firstName} {site.lastName}</h1>
-		<p class="cv-subtitle">Software Developer</p>
-		<p class="cv-contact">
-			<span>{site.location}</span>
-			<span>·</span>
-			<a href="mailto:{site.email}">{site.email}</a>
-			<span>·</span>
-			<a href="https://github.com/saymanrifat" target="_blank" rel="noopener noreferrer">github.com/saymanrifat</a>
-		</p>
-		<p class="cv-tagline">{site.oneliner}</p>
+	<!-- Hero -->
+	<header class="hero">
+		<p class="hero-eyebrow">Software developer · {site.location}</p>
+		<h1 class="hero-name">{site.firstName} {site.lastName}</h1>
+		<p class="hero-tagline">{site.tagline}</p>
+		<p class="hero-oneliner">{site.oneliner}</p>
+		<div class="hero-links">
+			<a href="mailto:{site.email}" class="focus-ring">Email</a>
+			<a href="https://github.com/saymanrifat" target="_blank" rel="noopener noreferrer" class="focus-ring">GitHub</a>
+			<a href="/writing" class="focus-ring">Writing</a>
+		</div>
 	</header>
 
 	<!-- Experience — main CV content -->
@@ -53,7 +52,11 @@
 			{#each skillGroups as group}
 				<div class="cv-skill-group">
 					<span class="cv-skill-label">{group.label}</span>
-					<span class="cv-skill-items">{group.skills.join(' · ')}</span>
+					<div class="cv-chips">
+						{#each group.skills as skill}
+							<span class="chip">{skill}</span>
+						{/each}
+					</div>
 				</div>
 			{/each}
 		</div>

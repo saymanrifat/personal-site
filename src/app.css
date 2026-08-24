@@ -13,6 +13,8 @@
 	--sp-12: 3rem;
 	--sp-16: 4rem;
 	--sp-20: 5rem;
+	--sp-24: 6rem;
+	--sp-32: 8rem;
 
 	--radius-sm: 0.25rem;
 	--radius: 0.5rem;
@@ -178,6 +180,9 @@ pre code {
 	.cv {
 		padding: var(--sp-8) var(--sp-4) var(--sp-16);
 	}
+	.cv-section {
+		margin-bottom: var(--sp-16);
+	}
 }
 
 .section-title {
@@ -213,11 +218,65 @@ pre code {
 	border-radius: var(--radius-sm);
 }
 
+/* ── Hero ── */
+.hero {
+	padding: var(--sp-32) 0 var(--sp-24);
+}
+
+.hero-eyebrow {
+	font-family: var(--font-mono);
+	font-size: 0.8rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--text-muted);
+	margin-bottom: var(--sp-5);
+}
+
+.hero-name {
+	font-size: clamp(2.75rem, 7vw, 5rem);
+	line-height: 1.05;
+	letter-spacing: -0.03em;
+	font-weight: 650;
+	color: var(--text);
+	margin-bottom: var(--sp-6);
+}
+
+.hero-tagline {
+	font-size: clamp(1.25rem, 2.5vw, 1.55rem);
+	line-height: 1.35;
+	color: var(--text);
+	max-width: 28em;
+	margin-bottom: var(--sp-4);
+}
+
+.hero-oneliner {
+	opacity: 0.8;
+	max-width: 40em;
+	line-height: 1.65;
+	margin-bottom: var(--sp-8);
+}
+
+.hero-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--sp-5);
+}
+
+.hero-links a {
+	font-weight: 500;
+}
+
+@media (max-width: 640px) {
+	.hero {
+		padding: var(--sp-16) 0 var(--sp-12);
+	}
+}
+
 /* ── CV layout ── */
 .cv {
 	max-width: 52rem;
 	margin: 0 auto;
-	padding: var(--sp-8) var(--sp-6) var(--sp-16);
+	padding: var(--sp-12) var(--sp-6) var(--sp-32);
 }
 
 .cv-header {
@@ -262,7 +321,7 @@ pre code {
 }
 
 .cv-section {
-	margin-bottom: var(--sp-10);
+	margin-bottom: var(--sp-24);
 }
 
 .cv-section:last-child {
@@ -275,7 +334,7 @@ pre code {
 	text-transform: uppercase;
 	letter-spacing: 0.15em;
 	color: var(--text-muted);
-	margin-bottom: var(--sp-4);
+	margin-bottom: var(--sp-6);
 	padding-bottom: var(--sp-2);
 	border-bottom: 1px solid var(--border);
 }
@@ -377,6 +436,22 @@ pre code {
 	line-height: 1.5;
 }
 
+.cv-chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--sp-2);
+}
+
+.chip {
+	padding: 0.3rem 0.8rem;
+	border: 1px solid var(--border);
+	border-radius: 999px;
+	font-size: 0.85rem;
+	color: var(--text-secondary);
+	white-space: nowrap;
+	background: var(--bg-elevated);
+}
+
 /* Now / Currently */
 .cv-now-list {
 	list-style: none;
@@ -439,21 +514,28 @@ pre code {
 /* Principles */
 .cv-principles {
 	display: grid;
-	gap: var(--sp-4);
-	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: var(--sp-8) var(--sp-10);
+	grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 720px) {
+	.cv-principles {
+		grid-template-columns: 1fr;
+	}
 }
 
 .cv-principle h3 {
 	font-size: 0.95rem;
 	font-weight: 600;
 	color: var(--text);
-	margin-bottom: var(--sp-1);
+	margin-bottom: var(--sp-2);
 }
 
 .cv-principle p {
 	font-size: 0.88rem;
 	color: var(--text-secondary);
 	margin: 0;
+	line-height: 1.6;
 }
 
 /* Prose */
