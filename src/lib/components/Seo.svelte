@@ -42,6 +42,10 @@
 	<meta name="robots" content={robots} />
 	<meta name="theme-color" content="#4f46e5" />
 	<link rel="canonical" href={canonicalUrl} />
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+	<link rel="icon" href="/favicon.ico" sizes="32x32" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	<link rel="manifest" href="/manifest.webmanifest" />
 
 	<meta property="og:type" content={type} />
 	<meta property="og:site_name" content={site.name} />
