@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import { site } from '$lib/config';
 	import ThemeToggle from './ThemeToggle.svelte';
 
 	const links = [
@@ -19,8 +20,8 @@
 
 <header class="site-header">
 	<div class="container nav-inner">
-		<a class="logo focus-ring" href="/" aria-label="Sayman Rifat — home">
-			<span class="mono">~/sayman</span>
+		<a class="logo focus-ring" href="/" aria-label="{site.name} — home">
+			<span class="mono">~/{site.firstName.toLowerCase()}</span>
 		</a>
 
 		<nav aria-label="Primary">

@@ -1,19 +1,19 @@
 // Central site configuration — edit here to update the whole site.
 
 export const site = {
-	name: 'Sayman Rifat',
-	firstName: 'Sayman',
-	lastName: 'Rifat',
-	title: 'Sayman Rifat — Developer',
+	name: 'Khairul Pasar',
+	firstName: 'Khairul',
+	lastName: 'Pasar',
+	title: 'Khairul Pasar — Developer',
 	description:
-		'Sayman Rifat is a developer based in Bangladesh building calm, well-crafted software — web, mobile, and developer tools with AI at the core.',
+		'Khairul Pasar is a developer based in Bangladesh building calm, well-crafted software — web, mobile, and developer tools with AI at the core.',
 	url: 'https://saymanrifat.com',
 	email: 'contact@saymanrifat.com',
 	location: 'Bangladesh',
 	timezone: 'Asia/Dhaka',
 	company: 'Umber Lab Limited',
 	keywords:
-		'Sayman Rifat, software developer, web developer, mobile developer, SvelteKit, Kotlin, Flutter, Swift, AI, Bangladesh developer',
+		'Khairul Pasar, software developer, web developer, mobile developer, SvelteKit, Kotlin, Flutter, Swift, AI, Bangladesh developer',
 	tagline: 'I build calm, well-sorted software — web, mobile, and tools that actually help people.',
 	oneliner:
 		'I turn loose ideas into quietly reliable software. Most of what I build leans on thoughtful UX, solid engineering, and a healthy respect for the people who will use it.',

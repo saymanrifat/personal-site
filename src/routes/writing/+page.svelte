@@ -1,9 +1,9 @@
 <script lang="ts">
 	import Seo from '$lib/components/Seo.svelte';
-	import { posts } from '$lib/config';
+	import { site, posts } from '$lib/config';
 </script>
 
-<Seo title="Writing" description="Essays and notes from Sayman on calm software, AI, and building." />
+<Seo title="Writing" description={`Essays and notes from ${site.firstName} on calm software, AI, and building.`} />
 
 <div class="cv">
 	<header class="cv-page-head">

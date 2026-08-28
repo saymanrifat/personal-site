@@ -1,4 +1,4 @@
-# Sayman's Personal Site
+# Khairul Pasar's Personal Site
 
 A calm, content-rich, SEO-optimized personal website built with **SvelteKit**. Fully static output (`adapter-static`) for maximum performance and SEO.
 

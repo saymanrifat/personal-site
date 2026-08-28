@@ -3,7 +3,7 @@
 	import { site, now } from '$lib/config';
 </script>
 
-<Seo title="Now" description="What Sayman is currently focused on." />
+<Seo title="Now" description={`What ${site.firstName} is currently focused on.`} />
 
 <div class="cv">
 	<header class="cv-page-head">

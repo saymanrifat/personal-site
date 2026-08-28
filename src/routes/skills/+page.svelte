@@ -1,9 +1,9 @@
 <script lang="ts">
 	import Seo from '$lib/components/Seo.svelte';
-	import { skillGroups } from '$lib/config';
+	import { site, skillGroups } from '$lib/config';
 </script>
 
-<Seo title="Skills" description="The languages, tools, and technologies Sayman works with." />
+<Seo title="Skills" description={`The languages, tools, and technologies ${site.firstName} works with.`} />
 
 <div class="cv">
 	<header class="cv-page-head">
