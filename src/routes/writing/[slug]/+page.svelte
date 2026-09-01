@@ -15,9 +15,9 @@
 
 <article class="cv">
 	<header class="cv-page-head">
-		<p class="cv-kicker mono">/ writing</p>
+		<p class="cv-kicker">/ writing</p>
 		<h1>{post.title}</h1>
-		<p class="cv-contact" style="gap: var(--sp-3);">
+		<p class="cv-contact">
 			<span class="cv-date">{post.date}</span>
 			<span>·</span>
 			<span class="cv-date">{post.readingTime}</span>
@@ -40,9 +40,9 @@
 		{/each}
 	</div>
 
-	<footer style="margin-top: var(--sp-12); padding-top: var(--sp-6); border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
-		<p class="mono" style="margin: 0; color: var(--text-muted);">— {site.name}</p>
-		<a href="/writing" style="font-size: 0.85rem; color: var(--text-muted);">← All writing</a>
+	<footer class="article-footer">
+		<p class="mono">— {site.name}</p>
+		<a class="article-back focus-ring" href="/writing">← All writing</a>
 	</footer>
 </article>
 
@@ -52,16 +52,20 @@
 	}
 	.cv-content p {
 		color: var(--text-secondary);
-		font-size: 1.05rem;
+		font-size: 1.08rem;
 		line-height: 1.8;
 		margin-bottom: var(--sp-5);
 	}
-	.cv-content strong {
+	.cv-content :global(strong) {
 		color: var(--text);
+		font-weight: 550;
 	}
 	.cv-content h2 {
-		font-size: 1.4rem;
-		margin-top: var(--sp-8);
+		font-family: var(--font-display);
+		font-weight: 400;
+		font-size: 1.55rem;
+		letter-spacing: -0.02em;
+		margin-top: var(--sp-10);
 		margin-bottom: var(--sp-4);
 		color: var(--text);
 	}
@@ -75,9 +79,10 @@
 		margin-bottom: var(--sp-2);
 		position: relative;
 		padding-left: 1em;
+		line-height: 1.7;
 	}
 	.cv-content ul li::before {
-		content: "—";
+		content: '—';
 		position: absolute;
 		left: 0;
 		color: var(--text-muted);

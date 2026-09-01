@@ -2,9 +2,11 @@
 	import '../app.css';
 	import '@fontsource-variable/inter';
 	import '@fontsource-variable/jetbrains-mono/wght.css';
+	import '@fontsource/instrument-serif/400.css';
+	import '@fontsource/instrument-serif/400-italic.css';
 	import Nav from '$lib/components/Nav.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import { theme } from '$lib/stores/theme';
+	import { page } from '$app/state';
 
 	let { children } = $props();
 </script>
@@ -27,19 +29,33 @@
 			} catch (e) {}
 		})();
 	</script>
+	<noscript>
+		<style>
+			.reveal {
+				opacity: 1 !important;
+				transform: none !important;
+			}
+			.page-enter {
+				animation: none !important;
+			}
+		</style>
+	</noscript>
 </svelte:head>
 
 <Nav />
 
-<main id="main">
-	{@render children()}
-</main>
+{#key page.url.pathname}
+	<main id="main" class="page-enter">
+		{@render children()}
+	</main>
+{/key}
 
 <Footer />
 
 <style>
 	main {
-		min-height: calc(100vh - 3.25rem - 120px);
-		padding-top: var(--sp-4);
+		position: relative;
+		z-index: 1;
+		min-height: calc(100vh - 4.5rem - 8rem);
 	}
 </style>

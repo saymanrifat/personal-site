@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Seo from '$lib/components/Seo.svelte';
+	import Reveal from '$lib/components/Reveal.svelte';
 	import { site, experience, principles } from '$lib/config';
 </script>
 
@@ -7,7 +8,7 @@
 
 <div class="cv">
 	<header class="cv-page-head">
-		<p class="cv-kicker mono">/ about</p>
+		<p class="cv-kicker">/ about</p>
 		<h1>About me</h1>
 	</header>
 
@@ -29,40 +30,42 @@
 		</p>
 	</div>
 
-	<!-- Experience -->
-	<section class="cv-section">
-		<h2 class="cv-section-title">Experience</h2>
-		{#each experience as job}
-			<div class="cv-entry">
-				<div class="cv-entry-head">
-					<div>
-						<h3>{job.role}</h3>
-						<span class="cv-company">{job.company}</span>
+	<Reveal delay={80}>
+		<section class="cv-section">
+			<h2 class="cv-section-title"><span class="cv-section-num" aria-hidden="true">01</span> Experience</h2>
+			{#each experience as job}
+				<div class="cv-entry">
+					<div class="cv-entry-head">
+						<div>
+							<h3>{job.role}</h3>
+							<span class="cv-company">{job.company}</span>
+						</div>
+						<span class="cv-period">{job.period}</span>
 					</div>
-					<span class="cv-period">{job.period}</span>
-				</div>
-				<p>{job.summary}</p>
-				{#if job.points.length}
-					<ul class="cv-bullets">
-						{#each job.points as pt}
-							<li>{pt}</li>
-						{/each}
-					</ul>
-				{/if}
-			</div>
-		{/each}
-	</section>
-
-	<!-- Principles -->
-	<section class="cv-section">
-		<h2 class="cv-section-title">Principles</h2>
-		<div class="cv-principles">
-			{#each principles as p}
-				<div class="cv-principle">
-					<h3>{p.title}</h3>
-					<p>{p.body}</p>
+					<p>{job.summary}</p>
+					{#if job.points.length}
+						<ul class="cv-bullets">
+							{#each job.points as pt}
+								<li>{pt}</li>
+							{/each}
+						</ul>
+					{/if}
 				</div>
 			{/each}
-		</div>
-	</section>
+		</section>
+	</Reveal>
+
+	<Reveal delay={120}>
+		<section class="cv-section">
+			<h2 class="cv-section-title"><span class="cv-section-num" aria-hidden="true">02</span> Principles</h2>
+			<div class="cv-principles">
+				{#each principles as p}
+					<div class="cv-principle">
+						<h3>{p.title}</h3>
+						<p>{p.body}</p>
+					</div>
+				{/each}
+			</div>
+		</section>
+	</Reveal>
 </div>

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Seo from '$lib/components/Seo.svelte';
+	import Reveal from '$lib/components/Reveal.svelte';
 	import { site } from '$lib/config';
 </script>
 
@@ -7,23 +8,27 @@
 
 <div class="cv">
 	<header class="cv-page-head">
-		<p class="cv-kicker mono">/ contact</p>
+		<p class="cv-kicker">/ contact</p>
 		<h1>Say hello</h1>
 		<p class="cv-tagline">
 			Whether it's a project idea, a collab, or just to talk shop — my inbox is open.
 		</p>
 	</header>
 
-	<div class="cv-skills">
-		<a href="mailto:{site.email}" style="display: block; padding: var(--sp-3) 0; border-bottom: 1px solid var(--border); color: var(--text); text-decoration: none;">
-			<span style="font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); display: block; margin-bottom: var(--sp-1);">Email</span>
-			<span class="cv-skill-items" style="color: var(--accent);">{site.email}</span>
-		</a>
-		{#each site.socials as s}
-			<a href={s.href} target="_blank" rel="noopener noreferrer" style="display: block; padding: var(--sp-3) 0; border-bottom: 1px solid var(--border); color: var(--text); text-decoration: none;">
-				<span style="font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); display: block; margin-bottom: var(--sp-1);">{s.label}</span>
-				<span class="cv-skill-items">{s.handle}</span>
+	<Reveal>
+		<div class="contact-list">
+			<a href="mailto:{site.email}" class="contact-row focus-ring">
+				<span class="contact-label">Email</span>
+				<span class="contact-value">{site.email}</span>
+				<span class="contact-arrow" aria-hidden="true">→</span>
 			</a>
-		{/each}
-	</div>
+			{#each site.socials as s}
+				<a href={s.href} target="_blank" rel="noopener noreferrer" class="contact-row focus-ring">
+					<span class="contact-label">{s.label}</span>
+					<span class="contact-value">{s.handle}</span>
+					<span class="contact-arrow" aria-hidden="true">→</span>
+				</a>
+			{/each}
+		</div>
+	</Reveal>
 </div>

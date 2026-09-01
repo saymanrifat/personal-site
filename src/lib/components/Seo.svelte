@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { site } from '$lib/config';
 	import { page } from '$app/state';
+	import { theme } from '$lib/stores/theme';
 
 	let {
 		title = site.title,
@@ -40,7 +41,7 @@
 	<title>{fullTitle}</title>
 	<meta name="description" content={description} />
 	<meta name="robots" content={robots} />
-	<meta name="theme-color" content="#4f46e5" />
+	<meta name="theme-color" content={$theme === 'dark' ? '#14120e' : '#f3efe6'} />
 	<link rel="canonical" href={canonicalUrl} />
 	<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 	<link rel="icon" href="/favicon.ico" sizes="32x32" />

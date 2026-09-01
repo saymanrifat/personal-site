@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Seo from '$lib/components/Seo.svelte';
+	import Reveal from '$lib/components/Reveal.svelte';
 	import { skillGroups } from '$lib/config';
 </script>
 
@@ -7,7 +8,7 @@
 
 <div class="cv">
 	<header class="cv-page-head">
-		<p class="cv-kicker mono">/ skills</p>
+		<p class="cv-kicker">/ skills</p>
 		<h1>My stack</h1>
 		<p class="cv-tagline">
 			The languages and tools I reach for to ship real products — across web, mobile, and the
@@ -15,12 +16,18 @@
 		</p>
 	</header>
 
-	<div class="cv-skills">
-		{#each skillGroups as group}
-			<div class="cv-skill-group" style="padding: var(--sp-3) 0; border-bottom: 1px solid var(--border);">
-				<span class="cv-skill-label">{group.label}</span>
-				<span class="cv-skill-items">{group.skills.join(' · ')}</span>
-			</div>
-		{/each}
-	</div>
+	<Reveal>
+		<div class="skill-block">
+			{#each skillGroups as group}
+				<div class="cv-skill-group">
+					<span class="cv-skill-label">{group.label}</span>
+					<div class="cv-chips">
+						{#each group.skills as skill}
+							<span class="chip">{skill}</span>
+						{/each}
+					</div>
+				</div>
+			{/each}
+		</div>
+	</Reveal>
 </div>
