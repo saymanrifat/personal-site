@@ -4,72 +4,21 @@
 
 <footer class="site-footer">
 	<div class="container footer-inner">
-		<p class="colophon">© {new Date().getFullYear()} {site.name}</p>
+		<p class="colophon">Built with curiosity, shipped with care. · © {new Date().getFullYear()} {site.name}</p>
 		<ul class="socials">
 			{#each site.socials as s (s.label)}
-				<li>
-					<a class="focus-ring" href={s.href} target="_blank" rel="noopener noreferrer">{s.label}</a>
-				</li>
+				<li><a class="focus-ring" href={s.href} target={s.label === 'Email' ? undefined : '_blank'} rel={s.label === 'Email' ? undefined : 'noopener noreferrer'}>{s.label} ↗</a></li>
 			{/each}
 		</ul>
 	</div>
 </footer>
 
 <style>
-	.site-footer {
-		position: relative;
-		z-index: 1;
-		border-top: 1px solid var(--border);
-		padding: var(--sp-10) 0 var(--sp-12);
-		margin-top: var(--sp-8);
-	}
-	.footer-inner {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: var(--sp-4);
-		max-width: var(--content);
-		flex-wrap: wrap;
-	}
-	.colophon {
-		margin: 0;
-		font-family: var(--font-mono);
-		font-size: 0.72rem;
-		letter-spacing: 0.08em;
-		color: var(--text-muted);
-	}
-	.socials {
-		display: flex;
-		gap: var(--sp-6);
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
-	.socials a {
-		position: relative;
-		color: var(--text-muted);
-		font-size: 0.8rem;
-		letter-spacing: 0.02em;
-		text-decoration: none;
-		transition: color var(--duration) var(--ease);
-	}
-	.socials a::after {
-		content: '';
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: -2px;
-		height: 1px;
-		background: currentColor;
-		transform: scaleX(0);
-		transform-origin: left;
-		transition: transform var(--duration-slow) var(--ease);
-	}
-	.socials a:hover {
-		color: var(--text);
-		text-decoration: none;
-	}
-	.socials a:hover::after {
-		transform: scaleX(1);
-	}
+	.site-footer { position: relative; z-index: 1; margin-left: 5.25rem; border-top: 1px solid var(--border); padding: 1.45rem 0 1.7rem; background: var(--bg); }
+	.footer-inner { max-width: none; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0 clamp(1.25rem, 5vw, 5.1rem); flex-wrap: wrap; }
+	.colophon { margin: 0; color: var(--text-muted); font: .62rem/1.4 var(--font-sans); letter-spacing: .08em; text-transform: uppercase; }
+	.socials { display: flex; gap: 1.35rem; list-style: none; margin: 0; padding: 0; }
+	.socials a { color: var(--text-muted); font: .65rem/1 var(--font-sans); letter-spacing: .05em; text-decoration: none; transition: color .22s var(--ease-out); }
+	.socials a:hover { color: var(--accent); text-decoration: none; }
+	@media (max-width: 640px) { .site-footer { margin-left: 0; } .footer-inner { align-items: flex-start; flex-direction: column; } .socials { gap: 1rem; } }
 </style>
