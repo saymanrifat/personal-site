@@ -1,114 +1,72 @@
 <script lang="ts">
 	import Seo from '$lib/components/Seo.svelte';
 	import Reveal from '$lib/components/Reveal.svelte';
-	import { site, now, posts, experience, principles } from '$lib/config';
+	import { site, now, skillGroups, posts, experience, principles } from '$lib/config';
 
 	const projects = [
 		{
-			number: '01',
-			title: 'Speak / listen / repeat.',
-			description:
-				'An AI speaking practice tool for people who know the words but need a safer place to say them out loud.',
-			tags: ['Product direction', 'AI + speech', 'Mobile'],
-			meta: 'Independent build · 2026',
-			evidence: 'Prototype → weekly speaking loop',
-			image: '/assets/project-speaking.png',
-			accent: 'chartreuse'
+			label: 'PUBLIC PROJECT',
+			title: 'CalMyPenny',
+			detail: 'A money manager app for Android, built with Kotlin.',
+			meta: 'Android · Kotlin',
+			href: 'https://github.com/saymanrifat/CalMyPenny'
 		},
 		{
-			number: '02',
-			title: 'Make room for the useful.',
-			description:
-				'A quieter approach to productivity software: fewer surfaces, better defaults, and a clear next action.',
-			tags: ['UX systems', 'Web app', 'Prototyping'],
-			meta: 'Independent build · Ongoing',
-			evidence: 'Constraint → one useful next action',
-			image: '/assets/project-calm-tools.png',
-			accent: 'bone'
+			label: 'CURRENTLY EXPLORING',
+			title: 'AI speaking practice',
+			detail: 'Tools for the part of language learning that happens out loud.',
+			meta: 'AI · Speech · Product',
+			href: '#about'
+		},
+		{
+			label: 'WORKING WITH',
+			title: 'Umber Lab',
+			detail: 'A small team building mobile products that respect your attention and privacy.',
+			meta: 'Product · Engineering',
+			href: 'https://www.umberlab.com/members'
 		}
 	] as const;
 </script>
 
 <Seo />
 
-<div class="sc-home" id="top">
-	<aside class="sc-rail" aria-label="Portfolio index">
-		<a class="sc-rail-mark" href="#top" aria-label="Back to top">
-			<img src="/assets/signal-mark.png" alt="" />
-			<span>/</span>
-			<strong>sayman</strong>
-		</a>
-		<div class="sc-rail-center"><span>SOFTWARE DEVELOPER · DHAKA</span></div>
-		<div class="sc-rail-bottom"><span class="sc-status-dot"></span><span>SELECT WORK</span></div>
-	</aside>
-
-	<section class="sc-hero">
-		<div class="sc-hero-copy">
-			<div class="sc-eyebrow"><span></span> Mobile app developer · {site.location}</div>
-			<h1>Software that earns its place <em>on the screen.</em></h1>
-			<p class="sc-hero-lede">I turn loose ideas into quietly reliable products for web, mobile, and the space between.</p>
-			<div class="sc-hero-actions">
-				<a class="sc-button" href="#work">See selected work <span>↘</span></a>
-				<a class="sc-text-link" href="mailto:{site.email}">Start a conversation <span>↗</span></a>
-			</div>
-			<div class="sc-hero-footnote"><span>Currently building</span><strong>AI speaking practice tools</strong></div>
+<div class="personal-home" id="top">
+	<section class="personal-hero">
+		<div class="personal-hero-copy">
+			<p class="personal-kicker"><span>01</span> Personal site · {site.location}</p>
+			<h1>Hi, I’m <em>Sayman.</em><br />I build useful software.</h1>
+			<p class="personal-intro">I’m a software developer from Bangladesh. I work across mobile and web, turning loose ideas into calm, well-sorted products that people can actually use.</p>
+			<div class="personal-hero-links"><a class="personal-button" href="mailto:{site.email}">Say hello <span>↗</span></a><a class="personal-underlink" href="/about">More about me <span>→</span></a></div>
+			<div class="personal-hero-meta"><span>Based in Dhaka, Bangladesh</span><span class="personal-available"><i></i> Available for select work</span></div>
 		</div>
-		<div class="sc-hero-art-wrap">
-			<div class="sc-hero-art"><img src="/assets/hero-studio-signal.png" alt="Abstract technical studio artwork" /></div>
-			<div class="sc-art-caption"><span>01 / SIGNAL</span><span>PRODUCT · MOBILE · WEB</span></div>
-			<div class="sc-crosshair" aria-hidden="true"></div>
-		</div>
-		<div class="sc-hero-index" aria-hidden="true">00</div>
-	</section>
-
-	<div class="sc-ticker" aria-label="What I build"><div><span>PRODUCT THINKING</span><b>✳</b><span>SHIPPED WITH CARE</span><b>✳</b><span>HUMAN-SCALE SYSTEMS</span><b>✳</b><span>PRODUCT THINKING</span></div></div>
-
-	<section class="sc-section sc-work" id="work">
-		<div class="sc-section-heading"><div class="sc-label"><span>01</span> Selected work</div><p>Small, considered software for people who want less friction between an idea and the thing that helps.</p></div>
-		<div class="sc-projects">
-			{#each projects as project, i}
-				<Reveal delay={i * 70}>
-					<article class:sc-project--bone={project.accent === 'bone'} class="sc-project">
-						<div class="sc-project-meta"><span class="sc-project-number">{project.number}</span><span>{project.meta}</span><span class="sc-project-arrow">↗</span></div>
-						<div class="sc-project-visual"><img src={project.image} alt="" /><span class="sc-project-corner">↗</span></div>
-						<div class="sc-project-copy">
-							<div class="sc-tag-row">{#each project.tags as tag}<span>{tag}</span>{/each}</div>
-							<div class="sc-evidence">✓ {project.evidence}</div>
-							<h2>{project.title}</h2>
-							<p>{project.description}</p>
-							<a class="sc-text-link" href="mailto:{site.email}?subject=Project%20conversation">Ask me about it <span>↗</span></a>
-						</div>
-					</article>
-				</Reveal>
-			{/each}
+		<div class="personal-portrait-wrap">
+			<div class="personal-portrait-frame"><img src="/assets/sayman-rifat-portrait.jpg" alt="Sayman Rifat wearing glasses and a blue jacket" /></div>
+			<div class="personal-portrait-note"><span>Sayman Rifat</span><span>Software developer<br />Android · Web · AI</span></div>
+			<div class="personal-portrait-number">SR<br /><small>2026</small></div>
 		</div>
 	</section>
 
-	<section class="sc-section sc-about" id="about">
-		<div class="sc-section-heading"><div class="sc-label"><span>02</span> A little context</div><p>The useful part is rarely the loudest part. I like finding it.</p></div>
-		<div class="sc-about-grid">
-			<div>
-				<p class="sc-display-copy">I’m Sayman — a mobile app developer who cares about the moment a product starts to feel <em>obvious.</em></p>
-				<p class="sc-body-copy">At {site.company}, I build and maintain production apps across Android, iOS, and the web. Independently, I prototype tools around AI, speaking practice, and developer productivity — taking them from rough thought to something real enough to use.</p>
-				<a class="sc-text-link" href="https://github.com/saymanrifat" target="_blank" rel="noreferrer">Browse the lab on GitHub <span>↗</span></a>
-			</div>
-			<div class="sc-principles"><div class="sc-principles-label">HOW I WORK</div>{#each principles as principle, i}<div class="sc-principle"><span>0{i + 1}</span><strong>{principle.title}</strong><p>{principle.body}</p></div>{/each}</div>
-		</div>
+	<section class="personal-marquee" aria-label="Personal introduction"><div><span>SOFTWARE DEVELOPER</span><b>✳</b><span>BASED IN BANGLADESH</span><b>✳</b><span>BUILDING WITH CARE</span><b>✳</b><span>SOFTWARE DEVELOPER</span></div></section>
+
+	<section class="personal-section personal-work" id="work">
+		<div class="personal-section-head"><p class="personal-kicker"><span>02</span> Selected work</p><p class="personal-section-note">A few things I’ve made, helped make, or am still figuring out.</p></div>
+		<div class="personal-project-list">{#each projects as project, i}<Reveal delay={i * 60}><a class="personal-project" href={project.href} target={project.href.startsWith('http') ? '_blank' : undefined} rel={project.href.startsWith('http') ? 'noreferrer' : undefined}><div class="personal-project-index">0{i + 1}</div><div><p class="personal-project-label">{project.label}</p><h2>{project.title}</h2><p class="personal-project-detail">{project.detail}</p></div><div class="personal-project-meta"><span>{project.meta}</span><strong>↗</strong></div></a></Reveal>{/each}</div>
 	</section>
 
-	<section class="sc-capabilities">
-		<div class="sc-capability-intro"><span>03</span><h2>From first sketch<br />to <em>shipped.</em></h2></div>
-		<div class="sc-capability-list"><div><span>01</span><strong>Mobile products</strong><p>Kotlin, Compose, Swift, SwiftUI, Flutter</p></div><div><span>02</span><strong>Web systems</strong><p>TypeScript, SvelteKit, React, Node.js</p></div><div><span>03</span><strong>AI integrations</strong><p>LLM APIs, speech, prompts, agent tooling</p></div></div>
+	<section class="personal-section personal-about" id="about">
+		<div class="personal-section-head"><p class="personal-kicker"><span>03</span> A little about me</p><p class="personal-section-note">The short version, without the résumé voice.</p></div>
+		<div class="personal-about-grid"><div><p class="personal-about-lede">I like the moment when a product stops feeling complicated and starts feeling <em>obvious.</em></p><p class="personal-body">At {site.company}, I work across UI, business logic, APIs, and release engineering. Outside of work, I build small tools around AI, speaking practice, and developer productivity. I’m happiest somewhere between the first sketch and the first person who says, “this is easier now.”</p><a class="personal-underlink" href="/about">Read the longer version <span>→</span></a></div><div class="personal-experience"><p class="personal-mini-label">RIGHT NOW</p>{#each now.items.slice(0, 3) as item, i}<div class="personal-now-item"><span>0{i + 1}</span><div><strong>{item.title}</strong><p>{item.detail}</p></div></div>{/each}</div></div>
 	</section>
 
-	<section class="sc-section sc-notes" id="notes">
-		<div class="sc-section-heading"><div class="sc-label"><span>04</span> Field notes</div><p>Writing about product decisions, technical edges, and small-team realities behind the work.</p></div>
-		<div class="sc-notes-list">{#each posts.slice(0, 3) as post}<a class="sc-note-row" href="/writing/{post.slug}"><span>{post.date.slice(8)}.{post.date.slice(5, 7)}.{post.date.slice(0, 4).slice(2)}</span><strong>{post.title}</strong><small>{post.readingTime}</small><b>↗</b></a>{/each}</div>
+	<section class="personal-section personal-experience-section" id="experience">
+		<div class="personal-section-head"><p class="personal-kicker"><span>04</span> Where I’ve been</p><p class="personal-section-note">A compact view of the work that shaped how I build.</p></div>
+		<div class="personal-timeline">{#each experience as job, i}<div class="personal-timeline-item"><div class="personal-timeline-marker"><span>0{i + 1}</span><i></i></div><div class="personal-timeline-copy"><div><h2>{job.role}</h2><p>{job.company} · {job.period}</p></div><p>{job.summary}</p></div></div>{/each}</div>
 	</section>
 
-	<section class="sc-contact" id="contact">
-		<div class="sc-contact-top"><div class="sc-label"><span>05</span> Open channel</div><div class="sc-contact-status"><span class="sc-status-dot"></span> Available for select work</div></div>
-		<div class="sc-contact-content"><h2>Have a useful<br /><em>problem?</em></h2><a class="sc-contact-email" href="mailto:{site.email}">{site.email} <span>↗</span></a></div>
-		<div class="sc-contact-bottom"><span>{site.name} · Mobile App Developer</span><span>Dhaka, Bangladesh · 2026</span><a href="#top">Back to top ↗</a></div>
+	<section class="personal-section personal-notes" id="notes">
+		<div class="personal-section-head"><p class="personal-kicker"><span>05</span> Notes from the work</p><p class="personal-section-note">Writing about product decisions, technical edges, and the parts worth remembering.</p></div>
+		<div class="personal-notes-list">{#each posts.slice(0, 3) as post}<a class="personal-note-row" href="/writing/{post.slug}"><span>{post.date.slice(0, 7).replace('-', '.')}</span><strong>{post.title}</strong><small>{post.readingTime}</small><b>↗</b></a>{/each}</div>
 	</section>
+
+	<section class="personal-closing" id="contact"><div class="personal-closing-top"><p class="personal-kicker"><span>06</span> Open channel</p><span>Let’s make something useful.</span></div><div class="personal-closing-main"><h2>Have an idea<br />worth <em>testing?</em></h2><a href="mailto:{site.email}">{site.email} <span>↗</span></a></div><div class="personal-closing-bottom"><span>{site.name} · {site.location}</span><a href="https://github.com/saymanrifat" target="_blank" rel="noreferrer">GitHub ↗</a><a href="#top">Back to top ↑</a></div></section>
 </div>
