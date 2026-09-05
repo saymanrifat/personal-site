@@ -19,7 +19,6 @@ export const site = {
 		'I turn loose ideas into quietly reliable software. Most of what I build leans on thoughtful UX, solid engineering, and a healthy respect for the people who will use it.',
 	socials: [
 		{ label: 'GitHub', handle: 'saymanrifat', href: 'https://github.com/saymanrifat' },
-		{ label: 'Website', handle: 'saymanrifat.com', href: 'https://saymanrifat.com/' },
 		{ label: 'Email', handle: 'contact@saymanrifat.com', href: 'mailto:contact@saymanrifat.com' }
 	]
 } as const;
@@ -124,17 +123,17 @@ export const posts = [
 	{
 		slug: 'speaking-is-the-most-skill',
 		date: '2026-07-28',
-		readingTime: '5 min read',
+		readingTime: '5 min',
 		tags: ['ai', 'language'],
 		title: 'Speaking a language is the hardest part',
 		excerpt:
 			"Most of us learn languages as grammar — and grammar we can't speak. Notes from building AI conversation tools.",
-		content: `Understanding a language is not the same as speaking it. The reader freezes when a human looks at them.\n\nThe interesting thing about AI is that it can finally practice. No judgment, no audience. A patient partner.\n\nThe hard problems here are not tokens. They are latency, feedback that feels human, and a sense of progress that keeps students trying.`
+		content: `Understanding a language is not the same as speaking it. The speaker freezes when a real person is waiting for them to talk.\n\nThe interesting thing about AI is that it can finally practice. No judgment, no audience. A patient partner.\n\nThe hard problems here are not tokens. They are latency, feedback that feels human, and a sense of progress that keeps students trying.`
 	},
 	{
 		slug: 'small-team-shipping',
 		date: '2026-06-15',
-		readingTime: '7 min read',
+		readingTime: '7 min',
 		title: 'What a small team can ship',
 		tags: ['process', 'engineering'],
 		excerpt:
@@ -144,7 +143,7 @@ export const posts = [
 	{
 		slug: 'tools-i-use',
 		date: '2026-05-20',
-		readingTime: '4 min read',
+		readingTime: '4 min',
 		title: 'The tools I use to build',
 		tags: ['tools'],
 		excerpt: 'A running list of my editor, shell, and daily toolkit — and why each one stays.',
@@ -155,7 +154,7 @@ export const posts = [
 		date: '2026-04-15',
 		title: 'On focus and deep work',
 		tags: ['focus'],
-		readingTime: '9 min read',
+		readingTime: '9 min',
 		excerpt:
 			'Focus is the scarcest resource I have. A short reflection on protecting it.',
 		content: `Eight hours in the seat is not the same as eight hours of work. The real hours are often three or four.\n\nProtect a deep work session. Everything else can wait the forty minutes.\n\nIt's not more hours you need. It's more presence.`
@@ -165,9 +164,9 @@ export const posts = [
 		date: '2026-03-20',
 		title: "Why I'm all-in on AI tools",
 		tags: ['ai'],
-		readingTime: '6 min read',
+		readingTime: '6 min',
 		excerpt:
 			'Not as a crutch, but as a lever. How AI reshapes what one developer can build alone.',
-		content: `A single developer with good AI tooling can now build what used to need a keep an idea. Not because AI writes perfect code — because it removes the friction and the forgetting.\n\nThe bottleneck is not writing code. It is the thousand small questions.\n\nAI handles that recall. I hold the product shape in my head, and the tools fill in the details.`
+		content: `A single developer with good AI tooling can now build what used to need a small team. Not because AI writes perfect code — because it removes the friction and the forgetting.\n\nThe bottleneck is not writing code. It is the thousand small questions.\n\nAI handles that recall. I hold the product shape in my head, and the tools fill in the details.`
 	}
 ] as const;

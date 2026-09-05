@@ -46,7 +46,7 @@
 		</div>
 	</section>
 
-	<section class="personal-marquee" aria-label="Personal introduction"><div><span>SOFTWARE DEVELOPER</span><b>✳</b><span>BASED IN BANGLADESH</span><b>✳</b><span>BUILDING WITH CARE</span><b>✳</b><span>SOFTWARE DEVELOPER</span></div></section>
+	<section class="personal-marquee" aria-label="Personal introduction"><div class="personal-marquee-track"><div class="personal-marquee-group"><span>SOFTWARE DEVELOPER</span><b>✳</b><span>BASED IN BANGLADESH</span><b>✳</b><span>BUILDING WITH CARE</span><b>✳</b><span>SOFTWARE DEVELOPER</span></div><div class="personal-marquee-group" aria-hidden="true"><span>SOFTWARE DEVELOPER</span><b>✳</b><span>BASED IN BANGLADESH</span><b>✳</b><span>BUILDING WITH CARE</span><b>✳</b><span>SOFTWARE DEVELOPER</span></div></div></section>
 
 	<section class="personal-section personal-work" id="work">
 		<div class="personal-section-head"><p class="personal-kicker"><span>02</span> Selected work</p><p class="personal-section-note">A few things I’ve made, helped make, or am still figuring out.</p></div>
