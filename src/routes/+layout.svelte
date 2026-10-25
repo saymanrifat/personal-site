@@ -1,9 +1,9 @@
 <script lang="ts">
 	import '../app.css';
-	import '@fontsource-variable/inter';
+	import '@fontsource-variable/inter/wght.css';
 	import '@fontsource-variable/jetbrains-mono/wght.css';
-	import '@fontsource/instrument-serif/400.css';
-	import '@fontsource/instrument-serif/400-italic.css';
+	import '@fontsource/instrument-serif/latin-400.css';
+	import '@fontsource/instrument-serif/latin-400-italic.css';
 	import Nav from '$lib/components/Nav.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import { page } from '$app/state';
@@ -11,7 +11,6 @@
 	let { children } = $props();
 </script>
 
-<!-- Inline no-flash theme initializer. Runs before paint; sets the theme class on <html>. -->
 <svelte:head>
 	<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 	<link rel="manifest" href="/manifest.webmanifest" />
@@ -22,10 +21,10 @@
 				var dark = stored
 					? stored === 'dark'
 					: window.matchMedia('(prefers-color-scheme: dark)').matches;
-				var cls = dark ? 'theme-dark' : 'theme-light';
 				var root = document.documentElement;
 				root.classList.remove('no-theme-init');
-				root.classList.add(cls);
+				root.classList.add(dark ? 'theme-dark' : 'theme-light');
+				root.style.colorScheme = dark ? 'dark' : 'light';
 			} catch (e) {}
 		})();
 	</script>
@@ -42,10 +41,12 @@
 	</noscript>
 </svelte:head>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <Nav />
 
 {#key page.url.pathname}
-	<main id="main" class="page-enter">
+	<main id="main" class="page-enter" tabindex="-1">
 		{@render children()}
 	</main>
 {/key}
@@ -56,6 +57,7 @@
 	main {
 		position: relative;
 		z-index: 1;
-		min-height: calc(100vh - 4.5rem - 8rem);
+		min-height: calc(100vh - var(--header-h) - 5.25rem);
+		outline: none;
 	}
 </style>

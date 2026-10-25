@@ -17,11 +17,33 @@ export const site = {
 	tagline: 'I build calm, well-sorted software — web, mobile, and tools that actually help people.',
 	oneliner:
 		'I turn loose ideas into quietly reliable software. Most of what I build leans on thoughtful UX, solid engineering, and a healthy respect for the people who will use it.',
-	socials: [
-		{ label: 'GitHub', handle: 'saymanrifat', href: 'https://github.com/saymanrifat' },
-		{ label: 'Email', handle: 'contact@saymanrifat.com', href: 'mailto:contact@saymanrifat.com' }
-	]
+	github: 'https://github.com/saymanrifat',
+	socials: [{ label: 'GitHub', handle: 'saymanrifat', href: 'https://github.com/saymanrifat' }]
 } as const;
+
+export const projects = [
+	{
+		label: 'Public project',
+		title: 'CalMyPenny',
+		detail: 'A money manager app for Android, built with Kotlin.',
+		meta: 'Android · Kotlin',
+		href: 'https://github.com/saymanrifat/CalMyPenny'
+	},
+	{
+		label: 'Currently exploring',
+		title: 'AI speaking practice',
+		detail: 'Tools for the part of language learning that happens out loud.',
+		meta: 'AI · Speech · Product',
+		href: '/writing/speaking-is-the-most-skill'
+	},
+	{
+		label: 'Working with',
+		title: 'Umber Lab',
+		detail: 'A small team building mobile products that respect your attention and privacy.',
+		meta: 'Product · Engineering',
+		href: 'https://www.umberlab.com/members'
+	}
+] as const;
 
 // ── Skills & tools ──
 export const skillGroups = [

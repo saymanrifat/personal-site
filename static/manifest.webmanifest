@@ -1,16 +1,16 @@
 {
-  "name": "Sayman Rifat",
-  "short_name": "Sayman",
-  "description": "Independent app developer — AI speaking tools, productivity apps, dev utilities.",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#0c0c0e",
-  "theme_color": "#4f46e5",
-  "icons": [
-    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
-    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
-    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
-  ]
+	"name": "Sayman Rifat",
+	"short_name": "Sayman",
+	"description": "Software developer based in Bangladesh — web, mobile, and tools with AI at the core.",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#f5f4f1",
+	"theme_color": "#1a1917",
+	"icons": [
+		{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+		{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+		{ "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+		{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+		{ "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+	]
 }

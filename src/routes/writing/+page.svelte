@@ -2,31 +2,32 @@
 	import Seo from '$lib/components/Seo.svelte';
 	import Reveal from '$lib/components/Reveal.svelte';
 	import { posts } from '$lib/config';
+	import { formatDate } from '$lib/format';
 </script>
 
 <Seo title="Writing" description="Essays and notes from Sayman on calm software, AI, and building." />
 
-<div class="cv">
-	<header class="cv-page-head">
-		<p class="cv-kicker">/ writing</p>
+<div class="page">
+	<header class="page-head">
+		<p class="kicker">Notes</p>
 		<h1>Notes &amp; essays</h1>
-		<p class="cv-tagline">
+		<p class="lede">
 			Thinking out loud about calm software, AI, language, and building things alone or in a small team.
 		</p>
 	</header>
 
 	<Reveal>
-		<ul class="writing-list">
+		<ul class="note-list">
 			{#each posts as post (post.slug)}
 				<li>
-					<a class="writing-row focus-ring" href="/writing/{post.slug}">
-						<div class="writing-row-main">
-							<h2 class="writing-row-title">{post.title}</h2>
-							<p class="writing-row-excerpt">{post.excerpt}</p>
+					<a class="note-row" href="/writing/{post.slug}">
+						<div>
+							<h2 class="note-title">{post.title}</h2>
+							<p class="note-excerpt">{post.excerpt}</p>
 						</div>
-						<div class="writing-row-meta">
-							<span class="cv-date">{post.date}</span>
-							<span class="cv-date">{post.readingTime}</span>
+						<div class="note-meta">
+							<time datetime={post.date}>{formatDate(post.date)}</time>
+							<span>{post.readingTime}</span>
 						</div>
 					</a>
 				</li>
