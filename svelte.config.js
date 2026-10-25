@@ -12,8 +12,11 @@ const config = {
 			precompress: true,
 			strict: true
 		}),
+		paths: {
+			relative: false
+		},
 		prerender: {
-			handleHttpError: ({ path, message }) => {
+			handleHttpError: ({ message }) => {
 				throw new Error(message);
 			}
 		}

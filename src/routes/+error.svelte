@@ -8,15 +8,15 @@
 
 <Seo noindex title={status === 404 ? 'Not found' : 'Error'} description="This page does not exist." />
 
-<div class="cv page-center">
-	<header class="cv-page-head">
-		<p class="cv-kicker">/ {status}</p>
+<div class="page page-center">
+	<header class="page-head">
+		<p class="kicker">{status}</p>
 		<h1>{status === 404 ? 'Page not found' : 'Something went wrong'}</h1>
-		<p class="cv-tagline">
+		<p class="lede">
 			{message && status !== 404
 				? message
 				: "The page you're looking for doesn't exist or moved."}
 		</p>
 	</header>
-	<a href="/" class="btn focus-ring">Go home</a>
+	<a href="/" class="btn">Go home</a>
 </div>

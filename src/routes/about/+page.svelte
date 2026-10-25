@@ -6,13 +6,13 @@
 
 <Seo title="About" description={`About ${site.name} — background, experience, and principles.`} type="profile" />
 
-<div class="cv">
-	<header class="cv-page-head">
-		<p class="cv-kicker">/ about</p>
+<article class="page">
+	<header class="page-head">
+		<p class="kicker">About</p>
 		<h1>About me</h1>
 	</header>
 
-	<div class="cv-prose">
+	<div class="prose">
 		<p>
 			I'm {site.name}, a developer based in {site.location}. For the past few years I've been
 			building software end to end — from the first line of code to the release notes — with a focus
@@ -30,22 +30,22 @@
 		</p>
 	</div>
 
-	<Reveal delay={80}>
-		<section class="cv-section">
-			<h2 class="cv-section-title"><span class="cv-section-num" aria-hidden="true">01</span> Experience</h2>
-			{#each experience as job}
-				<div class="cv-entry">
-					<div class="cv-entry-head">
+	<Reveal delay={40}>
+		<section class="page-section">
+			<h2 class="section-title"><span aria-hidden="true">01</span> Experience</h2>
+			{#each experience as job (job.role)}
+				<div class="entry">
+					<div class="entry-head">
 						<div>
 							<h3>{job.role}</h3>
-							<span class="cv-company">{job.company}</span>
+							<span class="entry-meta">{job.company}</span>
 						</div>
-						<span class="cv-period">{job.period}</span>
+						<span class="entry-meta">{job.period}</span>
 					</div>
 					<p>{job.summary}</p>
 					{#if job.points.length}
-						<ul class="cv-bullets">
-							{#each job.points as pt}
+						<ul class="plain-list">
+							{#each job.points as pt (pt)}
 								<li>{pt}</li>
 							{/each}
 						</ul>
@@ -55,17 +55,17 @@
 		</section>
 	</Reveal>
 
-	<Reveal delay={120}>
-		<section class="cv-section">
-			<h2 class="cv-section-title"><span class="cv-section-num" aria-hidden="true">02</span> Principles</h2>
-			<div class="cv-principles">
-				{#each principles as p}
-					<div class="cv-principle">
-						<h3>{p.title}</h3>
-						<p>{p.body}</p>
+	<Reveal delay={80}>
+		<section class="page-section">
+			<h2 class="section-title"><span aria-hidden="true">02</span> Principles</h2>
+			<div class="principles">
+				{#each principles as item (item.title)}
+					<div class="principle">
+						<h3>{item.title}</h3>
+						<p>{item.body}</p>
 					</div>
 				{/each}
 			</div>
 		</section>
 	</Reveal>
-</div>
+</article>

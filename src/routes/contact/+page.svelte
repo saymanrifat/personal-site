@@ -2,31 +2,42 @@
 	import Seo from '$lib/components/Seo.svelte';
 	import Reveal from '$lib/components/Reveal.svelte';
 	import { site } from '$lib/config';
+	import { isExternalHref } from '$lib/format';
 </script>
 
 <Seo title="Contact" description={`Get in touch with ${site.name}.`} />
 
-<div class="cv">
-	<header class="cv-page-head">
-		<p class="cv-kicker">/ contact</p>
+<div class="page">
+	<header class="page-head">
+		<p class="kicker">Contact</p>
 		<h1>Say hello</h1>
-		<p class="cv-tagline">
-			Whether it's a project idea, a collab, or just to talk shop — my inbox is open.
-		</p>
+		<p class="lede">Whether it's a project idea, a collab, or just to talk shop — my inbox is open.</p>
 	</header>
 
 	<Reveal>
-		<div class="contact-list">
-			<a href="mailto:{site.email}" class="contact-row focus-ring">
+		<div>
+			<a class="contact-row" href="mailto:{site.email}">
 				<span class="contact-label">Email</span>
 				<span class="contact-value">{site.email}</span>
 				<span class="contact-arrow" aria-hidden="true">→</span>
 			</a>
-			{#each site.socials as s}
-				<a href={s.href} target="_blank" rel="noopener noreferrer" class="contact-row focus-ring">
-					<span class="contact-label">{s.label}</span>
-					<span class="contact-value">{s.handle}</span>
-					<span class="contact-arrow" aria-hidden="true">→</span>
+			{#each site.socials as item (item.label)}
+				<a
+					class="contact-row"
+					href={item.href}
+					target={isExternalHref(item.href) && !item.href.startsWith('mailto:') ? '_blank' : undefined}
+					rel={isExternalHref(item.href) && !item.href.startsWith('mailto:')
+						? 'noopener noreferrer'
+						: undefined}
+				>
+					<span class="contact-label">{item.label}</span>
+					<span class="contact-value">{item.handle}</span>
+					<span class="contact-arrow" aria-hidden="true">
+						{item.href.startsWith('mailto:') ? '→' : '↗'}
+					</span>
+					{#if !item.href.startsWith('mailto:')}
+						<span class="visually-hidden">(opens in a new tab)</span>
+					{/if}
 				</a>
 			{/each}
 		</div>

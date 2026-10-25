@@ -4,11 +4,11 @@
 
 <Seo noindex title="Not found" description="This page does not exist." />
 
-<div class="cv page-center">
-	<header class="cv-page-head">
-		<p class="cv-kicker">/ 404</p>
+<div class="page page-center">
+	<header class="page-head">
+		<p class="kicker">404</p>
 		<h1>Page not found</h1>
-		<p class="cv-tagline">The page you're looking for doesn't exist or moved.</p>
+		<p class="lede">The page you're looking for doesn't exist or moved.</p>
 	</header>
-	<a href="/" class="btn focus-ring">Go home</a>
+	<a href="/" class="btn">Go home</a>
 </div>

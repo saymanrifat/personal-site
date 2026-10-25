@@ -6,27 +6,29 @@
 
 <Seo title="Now" description="What Sayman is currently focused on." />
 
-<div class="cv">
-	<header class="cv-page-head">
-		<p class="cv-kicker">/ now</p>
+<div class="page">
+	<header class="page-head">
+		<p class="kicker">Now</p>
 		<h1>Now</h1>
-		<p class="cv-tagline">
+		<p class="lede">
 			What I'm focused on right now. Updated {now.updated}. Inspired by the
-			<a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">now page</a>
+			<a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">
+				now page<span class="visually-hidden"> (opens in a new tab)</span>
+			</a>
 			movement — a public answer to "what are you up to?"
 		</p>
 	</header>
 
 	<Reveal>
-		<div class="cv-prose">
+		<div class="prose">
 			<p>
 				Hi — I'm {site.firstName}. Here's what's taking up my attention lately — a short and honest
 				snapshot, not a commitment.
 			</p>
 		</div>
 
-		<ul class="cv-now-list">
-			{#each now.items as item}
+		<ul class="now-list">
+			{#each now.items as item (item.title)}
 				<li>
 					<span class="now-title">{item.title}</span>
 					<span class="now-detail">{item.detail}</span>

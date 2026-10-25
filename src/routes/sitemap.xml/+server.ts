@@ -1,34 +1,35 @@
 import { posts, site } from '$lib/config';
 
 export const prerender = true;
+export const trailingSlash = 'never';
 
-/** @type {import('./$types').RequestHandler} */
 export function GET() {
-	const mainPages = [
-		{ path: '', changefreq: 'weekly', priority: 1.0 },
-		{ path: '/about', changefreq: 'monthly', priority: 0.8 },
-		{ path: '/skills', changefreq: 'monthly', priority: 0.7 },
-		{ path: '/writing', changefreq: 'weekly', priority: 0.8 },
-		{ path: '/now', changefreq: 'weekly', priority: 0.7 },
-		{ path: '/contact', changefreq: 'yearly', priority: 0.6 }
+	const pages = [
+		{ path: '', changefreq: 'weekly', priority: '1.0', lastmod: posts[0]?.date },
+		{ path: '/about', changefreq: 'monthly', priority: '0.8' },
+		{ path: '/skills', changefreq: 'monthly', priority: '0.7' },
+		{ path: '/writing', changefreq: 'weekly', priority: '0.8', lastmod: posts[0]?.date },
+		{ path: '/now', changefreq: 'weekly', priority: '0.7' },
+		{ path: '/contact', changefreq: 'yearly', priority: '0.6' }
 	];
 
-	const blog = posts.map((p) => ({
-		path: `/writing/${p.slug}`,
+	const blog = posts.map((post) => ({
+		path: `/writing/${post.slug}`,
 		changefreq: 'monthly',
-		priority: 0.6
+		priority: '0.6',
+		lastmod: post.date
 	}));
-
-	const all = [...mainPages, ...blog];
 
 	const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${all
+${[...pages, ...blog]
 	.map(
-		(p) => `  <url>
-    <loc>${site.url}${p.path}</loc>
-    <changefreq>${p.changefreq}</changefreq>
-    <priority>${p.priority}</priority>
+		(entry) => `  <url>
+    <loc>${site.url}${entry.path}</loc>
+    <changefreq>${entry.changefreq}</changefreq>
+    <priority>${entry.priority}</priority>${
+			entry.lastmod ? `\n    <lastmod>${entry.lastmod}</lastmod>` : ''
+		}
   </url>`
 	)
 	.join('\n')}
