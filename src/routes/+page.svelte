@@ -38,7 +38,7 @@
 			</div>
 			<figcaption>
 				<span>Sayman Rifat</span>
-				<span>Software developer · Android, web, AI</span>
+				<span>Android · Web · AI</span>
 			</figcaption>
 		</figure>
 	</section>
@@ -256,7 +256,7 @@
 	.frame {
 		background: var(--bg-subtle);
 		border: 1px solid var(--border);
-		aspect-ratio: 4 / 5;
+		aspect-ratio: 3 / 5;
 		overflow: hidden;
 	}
 
@@ -278,6 +278,10 @@
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		color: var(--text-muted);
+	}
+
+	figcaption span {
+		white-space: nowrap;
 	}
 
 	.band {

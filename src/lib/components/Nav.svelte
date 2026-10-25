@@ -175,16 +175,16 @@
 	@media (max-width: 640px) {
 		nav {
 			flex: 1;
-			overflow: hidden;
+			min-width: 0;
 		}
 
 		ul {
 			justify-content: flex-end;
-			overflow-x: auto;
-			scrollbar-width: none;
+			flex-wrap: nowrap;
+			gap: 0.75rem;
 		}
 
-		ul::-webkit-scrollbar {
+		ul li:first-child {
 			display: none;
 		}
 
