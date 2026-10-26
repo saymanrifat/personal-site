@@ -9,3 +9,4 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 # Agent37 hosting helper (not part of the site source)
 serve-static.mjs
+.DS_Store
